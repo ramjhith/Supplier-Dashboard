@@ -1,0 +1,325 @@
+╔════════════════════════════════════════════════════════╗
+║  📊 DASHBOARD v2.0 - UPGRADE COMPLETE              ║
+║     All Charts Fixed & KPI Selector Added           ║
+╚════════════════════════════════════════════════════════╝
+
+✅ FIXES & IMPROVEMENTS APPLIED
+═════════════════════════════════════════════════════════
+
+1️⃣  FIXED CHART VISIBILITY
+   ✓ Restructured chart rendering engine
+   ✓ All charts now load and display correctly
+   ✓ Improved error handling for empty datasets
+   ✓ Better responsive layout
+
+2️⃣  NEW: KPI SELECTOR FEATURE
+   ✓ Checkbox list to select 1-6 charts to display
+   ✓ Default: On-Time Delivery, Defect Rate, Lead Time
+   ✓ Choose: Cost Variance, Risk Score, Rejection Reasons
+   ✓ Charts update instantly when you check/uncheck
+
+3️⃣  NEW: COMPANY-SPECIFIC METRICS
+   ✓ Select individual supplier from dropdown
+   ✓ View KPI cards specific to that supplier
+   ✓ ML predictions appear only for selected supplier
+   ✓ All filters (date, status) apply to selected company
+
+4️⃣  REDESIGNED USER INTERFACE
+   ✓ Left panel: Filters & Settings
+   ✓ Right panel: Charts & Data visualizations
+   ✓ Better spacing and color scheme
+   ✓ Professional, modern layout
+   ✓ Mobile-responsive design
+
+═════════════════════════════════════════════════════════
+🎯 QUICK START GUIDE
+═════════════════════════════════════════════════════════
+
+Step 1: Navigate to project folder
+  cd /Users/kharshprabhakar/Desktop/SCME/P6_SupplierDashboard
+
+Step 2: Activate environment & run dashboard
+  source venv/bin/activate
+  python app.py
+
+Step 3: Open browser
+  http://127.0.0.1:8050/
+
+Step 4: Use the dashboard
+  • Left Panel: Select supplier, date range, KPI metrics
+  • Right Panel: View charts and predictions
+  • Changes update in real-time
+
+═════════════════════════════════════════════════════════
+📊 WHAT YOU CAN DO NOW
+═════════════════════════════════════════════════════════
+
+VIEW ALL SUPPLIERS:
+  1. Keep "All Suppliers" in dropdown
+  2. Select KPIs you want to see
+  3. Charts show comparison across all 12 suppliers
+
+VIEW SINGLE SUPPLIER:
+  1. Select supplier from dropdown (e.g., "Acme Manufacturing")
+  2. View their specific KPI metrics in cards
+  3. Select which charts to display
+  4. See ML predictions at bottom
+
+COMPARE SPECIFIC METRICS:
+  1. Keep "All Suppliers"
+  2. Select ONLY the KPIs you care about
+  e.g., Just "Defect Rate" + "Rejection Reasons"
+  3. See focused analysis on your metrics
+
+ANALYZE TIME PERIODS:
+  1. Use Date Range picker to filter
+  2. Select Status (All/Delivered/Pending)
+  3. See how metrics changed over time
+
+═════════════════════════════════════════════════════════
+🤖 ML PREDICTIONS (Single Supplier Only)
+═════════════════════════════════════════════════════════
+
+When you select a specific supplier, you'll see:
+
+⚠️  DELAY RISK (%)
+    • Probability order will be late
+    • Based on: historical lead times, order qty, month
+    • Red (>60%): High risk of delay
+    • Orange (40-60%): Medium risk
+    • Green (<40%): Low risk
+
+⚠️  QUALITY RISK (%)
+    • Probability defect rate will exceed 5%
+    • Based on: historical defects, batch size, category
+    • Red (>50%): Schedule incoming inspection
+    • Orange (30-50%): Monitor closely
+    • Green (<30%): Low defect risk
+
+📅  LEAD TIME CATEGORY
+    • Predicted delivery: Early / On-time / Late
+    • Based on: urgency, seasonal patterns, location
+    • Green: On-time expected
+    • Yellow: Early expected
+    • Red: Late expected
+
+═════════════════════════════════════════════════════════
+📈 DASHBOARD SECTIONS EXPLAINED
+═════════════════════════════════════════════════════════
+
+1. KPI SUMMARY CARDS (Top)
+   • On-Time Delivery Rate (%)
+   • Defect Rate (%)
+   • Average Lead Time (days)
+   • Risk Score (0-100)
+   Color-coded: Green (good), Yellow (warning), Red (critical)
+
+2. SELECTED CHARTS (Middle)
+   • Only charts you selected appear
+   • Interactive: Hover for details, click to zoom
+   • Color-coded by performance
+   • Real-time updates when filters change
+
+3. OPEN PURCHASE ORDERS TABLE (Bottom)
+   • Next 20 orders by expected delivery
+   • Supplier, PO#, dates, quantity, status
+   • Helps with order tracking
+
+4. ML PREDICTIONS (Bottom)
+   • Only visible when single supplier selected
+   • Three prediction boxes
+   • Actionable insights for decision-making
+
+═════════════════════════════════════════════════════════
+🎛️  CONTROLS IN LEFT PANEL
+═════════════════════════════════════════════════════════
+
+✓ Select Supplier (dropdown)
+  Options: All Suppliers, Acme Manufacturing, Global Parts Ltd,
+  European Supply Co, Pacific Logistics, etc.
+
+✓ Date Range (date picker)
+  Default: Last 180 days
+  Customize: Pick any start/end dates
+
+✓ Filter by Status (dropdown)
+  • All: Show all orders
+  • Delivered: Only completed orders
+  • Pending: Only pending orders
+
+✓ Select KPIs to Display (checkboxes)
+  ☑ On-Time Delivery Rate
+  ☑ Defect Rate
+  ☑ Lead Time Trend
+  ☑ Cost Variance
+  ☑ Risk Score
+  ☑ Rejection Reasons
+  (Check/uncheck to show/hide charts)
+
+✓ Refresh Data Button
+  Click to reload data from database
+  (Automatic refresh when filters change)
+
+═════════════════════════════════════════════════════════
+💡 USE CASES & EXAMPLES
+═════════════════════════════════════════════════════════
+
+SCENARIO 1: Executive Summary
+  • Select "All Suppliers"
+  • Check: On-Time Delivery Rate, Risk Score, Cost Variance
+  • View overall supplier performance trends
+  • Decision: Which suppliers need attention?
+
+SCENARIO 2: Quality Audit
+  • Select "All Suppliers"
+  • Check: Defect Rate, Rejection Reasons
+  • Analyze: Which suppliers have quality issues?
+  • Action: Schedule quality audits for red suppliers
+
+SCENARIO 3: Single Supplier Deep Dive
+  • Select "Acme Manufacturing"
+  • Check all KPI boxes
+  • View: All their metrics + ML predictions
+  • Decision: Should we renegotiate SLA? Switch supplier?
+
+SCENARIO 4: Seasonal Analysis
+  • Select date range: Jan-Mar or Jul-Sep
+  • Select "All Suppliers"
+  • Check: Lead Time Trend, On-Time Delivery
+  • Question: Is performance seasonal?
+
+SCENARIO 5: Cost Management
+  • Select "All Suppliers"
+  • Check: Cost Variance only
+  • Analyze: Which suppliers have cost creep?
+  • Action: Renegotiate pricing with red suppliers
+
+═════════════════════════════════════════════════════════
+🔧 FILE STRUCTURE
+═════════════════════════════════════════════════════════
+
+NEW v2.0 FILES:
+├── app.py                 ← Updated (26KB) - Main dashboard
+├── app_v2.py             ← Same as app.py (backup)
+├── app_old.py            ← Original v1.0 (backup)
+├── UPGRADE_v2.0.sh       ← This upgrade guide
+
+EXISTING FILES (UNCHANGED):
+├── database.py           ← SQLite setup & 100 sample orders
+├── kpi_calculator.py     ← All 8 KPI calculations
+├── ml_models.py          ← 3 ML models (Random Forest, Logistic)
+├── requirements.txt      ← Python dependencies
+├── test.py              ← Test suite ✅ ALL PASS
+├── setup.sh             ← Auto-setup script
+├── run.sh               ← Run script
+├── README.md            ← Full documentation
+
+═════════════════════════════════════════════════════════
+⚡ PERFORMANCE TIPS
+═════════════════════════════════════════════════════════
+
+1. For fastest loading, uncheck unused KPIs
+   (Fewer charts = faster rendering)
+
+2. Use date range filters to limit data
+   (Smaller date range = faster queries)
+
+3. Charts render progressively
+   (Wait a moment for all to load)
+
+4. Hover on charts for details
+   (No need to click - just hover over bars/lines)
+
+5. Refresh data only when needed
+   (Button in left panel)
+
+═════════════════════════════════════════════════════════
+🐛 TROUBLESHOOTING
+═════════════════════════════════════════════════════════
+
+CHARTS STILL NOT SHOWING:
+  1. Refresh browser (Ctrl+R or Cmd+R)
+  2. Check that checklist has items selected
+  3. Check browser console for errors (F12)
+  4. Restart app: Stop (Ctrl+C) and run again
+
+NO DATA IN CHARTS:
+  1. Check date range - ensure it has data
+  2. Verify supplier selection
+  3. Check Status filter - try "All"
+  4. Click "Refresh Data" button
+
+ML PREDICTIONS NOT SHOWING:
+  1. Make sure you selected a specific supplier
+  2. (They only show for individual suppliers, not "All")
+  3. Wait 2-3 seconds for calculations
+
+SLOW PERFORMANCE:
+  1. Uncheck unnecessary KPIs
+  2. Use narrower date range
+  3. Reduce number of filters
+  4. Restart the app
+
+═════════════════════════════════════════════════════════
+📝 WHAT'S INCLUDED (COMPLETE FEATURES)
+═════════════════════════════════════════════════════════
+
+✓ 8 KPIs
+  1. On-Time Delivery Rate
+  2. Defect Rate
+  3. Average Lead Time
+  4. Lead Time Variability
+  5. Cost Variance
+  6. Supplier Risk Score
+  7. PO Acknowledgment Rate
+  8. Response Time to Queries
+
+✓ 3 ML Models
+  1. Delay Prediction (Random Forest)
+  2. Defect Risk Prediction (Logistic Regression)
+  3. Lead Time Category (Random Forest)
+
+✓ 6 Interactive Charts
+  1. On-Time Delivery by Supplier
+  2. Defect Rate by Supplier
+  3. Lead Time Trend
+  4. Cost Variance
+  5. Supplier Risk Scores
+  6. Rejection Reasons
+
+✓ Interactive Filters
+  • Supplier selector
+  • Date range picker
+  • Status filter
+  • KPI selector (NEW!)
+
+✓ Data Tables
+  • Open POs (next 20)
+  • KPI summary
+
+✓ Sample Data
+  • 12 suppliers
+  • 100 purchase orders
+  • Realistic metrics
+  • ~35% delayed orders
+
+═════════════════════════════════════════════════════════
+🎉 READY TO USE!
+═════════════════════════════════════════════════════════
+
+To start the dashboard right now:
+
+    cd /Users/kharshprabhakar/Desktop/SCME/P6_SupplierDashboard
+    source venv/bin/activate
+    python app.py
+
+Then open: http://127.0.0.1:8050/
+
+The dashboard will be ready in 3-5 seconds.
+All charts will be visible and responsive!
+
+═════════════════════════════════════════════════════════
+
+Questions? Check README.md for full documentation.
+Version: 2.0 (Charts Fixed + KPI Selector Added)
+Status: ✅ Production Ready
